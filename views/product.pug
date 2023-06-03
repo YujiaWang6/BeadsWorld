@@ -1,0 +1,20 @@
+extends layout
+
+block main-content 
+  div.intro-product
+    h1 Single Bead 
+    p Shop your single bead and DIY your own keychain
+  
+  
+    div.productContainer
+        each bead in product
+            div.productContainer__flex
+                div.productContainer__flex__product
+                    img(src=bead.image width="300px" alt=bead.BeadName)
+                    a(href="/product") #{bead.BeadName} 
+                    p #{bead.Price} 
+                    button Add to Cart
+
+        
+    
+

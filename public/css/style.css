@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+body{
+    background-color: white;
+    font-family: 'Irish Grover', cursive;
+    margin:0;
+}
+#sitename{
+    background-image: url("../img/IMG_2399.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    margin:0;
+    padding:1em 2em 3em 1em;
+    font-size:4em;
+    color:white;
+    
+}
+
+#sitename a{
+    text-decoration:none;
+    color:rgb(255, 212, 120);
+    font-size: 5rem;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    
+}
+
+#sitename a:hover {
+    color:rgb(118, 188, 197);
+}
+
+.intro{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.intro-product{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.productContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow:row wrap;
+    margin: 5em 0;
+    
+}
+
+.productContainer__flex {
+    flex-basis: 25%;
+}
+
+.productContainer__flex__product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5em 0;
+}
+
+.productContainer__flex__product button{
+    background-color: rgb(118, 188, 197);
+    padding:0.5em;
+    color:white;
+    font-size: 1.2em;
+    border-radius: 15px;
+    font-family: 'Irish Grover', cursive;
+    border: dashed;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-evenly;
+    font-size: 2em;
+    gap: 1.68rem;
+    margin: 0;
+    padding:0;
+    background-color: rgb(118, 188, 197);
+    position:relative;
+}
+.menu a{
+    text-decoration:none;
+    color: white;
+}
+.menu a:hover{
+    color:rgb(102, 229, 246);
+}
+.menu__cart {
+    position:absolute;
+    right:10px;
+    
+}
+.menu__cart a{
+    color:black;
+}
+
+.contact__form label{
+    font-size: 2em;
+    
+}
+
+.contact__form button{
+    background-color: rgb(255, 212, 120);
+    padding:0.5em;
+    color:white;
+    font-size: 1.2em;
+    border-radius: 15px;
+    font-family: 'Irish Grover', cursive;
+    border: dashed;
+}
+.contact__h1{
+    margin:1rem;
+}
+
+.contact__form {
+    margin:1rem;
+}
+
+.cart__h1 {
+    margin:1rem;
+}

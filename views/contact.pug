@@ -1,0 +1,15 @@
+extends layout
+
+block main-content 
+    h1.contact__h1 Contact us 
+    form.contact__form(method="post", action="/contact/submit")
+        div
+            label(for="name") Name: 
+            input(id="name", name="name", type="text")
+        div 
+            label(for="email") Email: 
+            input(id="email", name="email", type="text")
+        div 
+            label(for="comment") Comment: 
+            input(id="comment", name="comment", type="textarea")
+        button(type="submit") Send!

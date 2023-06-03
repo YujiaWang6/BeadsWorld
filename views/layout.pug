@@ -1,0 +1,30 @@
+doctype html 
+html 
+  head 
+    meta(charset="utf-8")
+    title #{title} | Beads World
+    meta(name="viewport", content="width=device-width")
+    link(rel="stylesheet", type="text/css",href="css/style.css")
+    block scripts
+      script(src="js/script.js")
+  body 
+    header#header 
+      .header-content
+        h2#sitename 
+          a(href="/" ) Beads World 
+        nav
+          ul.menu 
+            each link in menu 
+              li 
+                a(href=link.path) #{link.name}
+
+    main#main 
+      block main-content 
+
+    footer#footer 
+      nav
+        ul.menu 
+          each link in menu 
+            li 
+              a(href=link.path) #{link.name}   
+        p &copy; Beads World, 2023.

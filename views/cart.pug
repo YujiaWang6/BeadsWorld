@@ -2,3 +2,11 @@ extends layout
 
 block main-content 
     h1.cart__h1 Your Cart:
+        div.cartContainer
+            each select in cart
+                div.cartContainer__flex
+                    div.cartContainer__flex__product
+                        img(src=select.image width="300px" alt=select.BeadName)
+                        a(href="/product") #{select.BeadName} 
+                        p #{select.Price} 
+        

@@ -1,20 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+/*--General--*/
 body{
     background-color: white;
     font-family: 'Irish Grover', cursive;
     margin:0;
 }
+img {
+    max-width:100%;
+    height:auto;
+}
+/*--Banner & Nav--*/
 #sitename{
     background-image: url("../img/IMG_2399.jpg");
     background-repeat: no-repeat;
     background-position: top;
     margin:0;
-    padding:1em 2em 3em 1em;
+    padding:1em 2em 1em 1em;
     font-size:4em;
     color:white;
     
 }
-
 #sitename a{
     text-decoration:none;
     color:rgb(255, 212, 120);
@@ -27,19 +32,64 @@ body{
     color:rgb(118, 188, 197);
 }
 
+#sitename a:active{
+    color:rgb(63, 87, 90);
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-evenly;
+    font-size: 2em;
+    gap: 1.68rem;
+    margin: 0;
+    padding:0;
+    background-color: rgb(118, 188, 197);
+    position:relative;
+}
+.menu a{
+    text-decoration:none;
+    color: white;
+}
+.menu a:hover{
+    color:rgb(63, 87, 90);
+}
+
+
+/*--Main Page(index)--*/
 .intro{
     text-align: center;
     font-size: 1.5em;
+    margin: 1em 0;
+}
+.intro p{
+    margin:0 1em 1.5em 1em;
+}
+
+.intro__button {
+    text-decoration: none;
+    color:white;
+    background-color: rgb(255, 212, 120);
+    padding:0.8em;
+    border-radius: 1em;
+}
+
+.intro__button:hover{
+    background-color: rgb(118, 188, 197);
+}
+
+.intro__button:active{
+    background-color: rgb(63, 87, 90);
+}
+
+.intro img{
+    margin:1.5em 0 0 0;
 }
 
 
-
-img {
-    max-width:100%;
-    height:auto;
-}
-
-.intro-product{
+/*--Product Page--*/
+.product{
     text-align: center;
     font-size: 1.5em;
 }
@@ -48,7 +98,7 @@ img {
     display: flex;
     justify-content: space-evenly;
     flex-flow:row wrap;
-    margin: 5em 0;
+    margin: 0 0 5em 0;
     
 }
 
@@ -73,35 +123,22 @@ img {
     border: dashed;
 }
 
-
-.menu {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: space-evenly;
-    font-size: 2em;
-    gap: 1.68rem;
-    margin: 0;
-    padding:0;
-    background-color: rgb(118, 188, 197);
-    position:relative;
-}
-.menu a{
-    text-decoration:none;
-    color: white;
-}
-.menu a:hover{
-    color:rgb(102, 229, 246);
-}
-.menu__cart {
-    position:absolute;
-    right:10px;
-    
-}
-.menu__cart a{
-    color:black;
+.productContainer__flex__product button:hover{
+    background-color: rgb(63, 87, 90);
 }
 
+
+/*--Contact Page--*/
+.contact__h1{
+    margin:1rem;
+}
+.contact__p{
+    margin:1rem;
+}
+
+.contact__form {
+    margin:1rem;
+}
 .contact__form label{
     font-size: 2em;
     
@@ -116,14 +153,34 @@ img {
     font-family: 'Irish Grover', cursive;
     border: dashed;
 }
-.contact__h1{
-    margin:1rem;
+.contact__form button:hover{
+    background-color: rgb(118, 188, 197);
 }
 
-.contact__form {
-    margin:1rem;
+.contact__form button:active{
+    background-color: rgb(63, 87, 90);
 }
 
+/*--Cart Page--*/
 .cart__h1 {
     margin:1rem;
+}
+
+.cartContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow:row wrap;
+    margin: 0 0 5em 0;
+}
+
+.cartContainer__flex {
+    flex-basis: 100%;
+}
+
+.cartContainer__flex__product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:2em;
+    margin: 1.5em 0;
 }

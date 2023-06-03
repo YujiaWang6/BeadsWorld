@@ -1,11 +1,11 @@
 extends layout
 
 block main-content 
-  div.intro-product
+  div.product
     h1 Single Bead 
     p Shop your single bead and DIY your own keychain
   
-  
+    
     div.productContainer
         each bead in product
             div.productContainer__flex
@@ -13,7 +13,9 @@ block main-content
                     img(src=bead.image width="300px" alt=bead.BeadName)
                     a(href="/product") #{bead.BeadName} 
                     p #{bead.Price} 
-                    button Add to Cart
+                    form(action="/product/submit", method="post")
+                      input(type="hidden",name="productId", value=bead._id)
+                      button Add to Cart
 
         
     

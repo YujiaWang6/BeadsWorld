@@ -13,8 +13,8 @@ const { MongoClient, ObjectId }= require("mongodb");
 const { response } = require("express");
 
 
-const dbUrl = "mongodb+srv://assignment1:RGvJDsejdgj9duTW@cluster0.cijlb2g.mongodb.net/";
-//const dbUrl = "mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@cluster0.cijlb2g.mongodb.net/";
+//const dbUrl = "mongodb+srv://assignment1:RGvJDsejdgj9duTW@cluster0.cijlb2g.mongodb.net/";
+const dbUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@cluster0.cijlb2g.mongodb.net/`;
 const client = new MongoClient(dbUrl);
 
 app.set("views", path.join(__dirname, "views"));
@@ -136,39 +136,16 @@ app.listen(port, () => {
   async function findBeadDetail(){
     db=await connection();
     let beadId = await displayCart();
-
-    //console.log(selectedId.product2);
-    const selectedP1 = {_id: new ObjectId(beadId[0].selectedProductId)};
+    let finalBeadId = [];
+    for(let i=0; i<beadId.length; i++){
+    
+    const selectedP1 = {_id: new ObjectId(beadId[i].selectedProductId)};
     let displayProduct1 = await db.collection("BeadsInfo").findOne(selectedP1);
-    const selectedP2 = {_id: new ObjectId(beadId[1].selectedProductId)};
-    let displayProduct2 = await db.collection("BeadsInfo").findOne(selectedP2);
- 
-    //var productDetail = db.collection("BeadsInfo").find({selectedId})
-    //res=await productDetail.toArray();
-    //return res;
 
-    let finalProduct = {
-      dProduct1: displayProduct1,
-      dProduct2: displayProduct2,
-    }
-    return finalProduct;
-  }
-
-  /*
-  let finalBeadId = [];
-  for(let i=0; i<beadId.lengthl; i++){
-    
-    finalBeadId.push(beadId[i].selectedProductId);
+    finalBeadId.push(displayProduct1);
     
   }
+  
   console.log(finalBeadId);
-  const selectedP1 = {_id: new ObjectId(finalBeadId[0])};
-  let displayProduct1 = await db.collection("BeadsInfo").findOne(selectedP1);
-  const selectedP2 = {_id: new ObjectId(finalBeadId[1])};
-  let displayProduct2 = await db.collection("BeadsInfo").findOne(selectedP2);
-  let finalProduct = {
-    dProduct1: displayProduct1,
-    dProduct2: displayProduct2,
+  return finalBeadId;
   }
-  return finalProduct;
-  }*/
